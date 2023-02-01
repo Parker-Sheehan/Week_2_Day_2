@@ -446,9 +446,13 @@ class Motorcycle extends Vehicle {
 
 //Code Here 
 
+let myFirstMotorcycle = new Motorcycle(2, "red", 15000, "Dukati", true)
+
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
 */
+
+myFirstMotorcycle.move(100)
 
 /*
   Let's make another class based off of Vehicle. 
@@ -468,6 +472,25 @@ class Motorcycle extends Vehicle {
 
 //Code Here
 
+class boat extends Vehicle{
+  constructor(capacity, color, mileage, name, type, isSeaworthy){
+    super(capacity, color, mileage)
+    this.name = name
+    this.type = type
+    this.isSeaworthy = isSeaworthy
+  }
+
+  checkSeaworthiness(){
+    if (this.isSeaworthy === true){
+      console.log(`The ${this.color} ${this.type} ${this.name} is seaworthy!`)
+    } else {
+      console.log(`You need to get your ${this.type} in shape`)
+    }
+  }
+  performMaintenance(){
+    this.isSeaworthy = true
+  }
+}
 
 /*
   Create a new boat using your class. You can choose whatever values you like for all the 
@@ -476,11 +499,15 @@ class Motorcycle extends Vehicle {
 
 //Code Here
 
+let myFirstBoat = new boat(25, "white", 0, "git lit ship", "yatch", false)
+
 /*
   Call the checkSeaworthiness method on your new boat
 */
 
 //Code Here
+
+myFirstBoat.checkSeaworthiness()
 
 /*
   Now run the performMaintenance method on your boat
@@ -488,8 +515,12 @@ class Motorcycle extends Vehicle {
 
 //Code Here 
 
+myFirstBoat.performMaintenance()
+
 /*
   Check the seaworthiness once more (you should be ready for the water!)
 */
 
 //Code Here
+
+myFirstBoat.checkSeaworthiness()
